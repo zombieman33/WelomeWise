@@ -1,0 +1,33 @@
+# Information
+# %player% is player name
+# %online-players% is all the players online
+
+shouldUseCommand: true
+# Remember that if you make a command you'll need to have
+# "ifCommands: true" else it won't work, also don't use
+# / in commands
+# These commands are run by console!
+commands:
+  - ''
+
+shouldSendMessage: true
+# Remember that if you make a command you'll need to have
+# "ifMessage: true" else it won't work
+message: '&bWelcome Back &a%player% &bto WelcomeWise you are connected with %online-players% other player'
+
+shouldSendFirstMessage: true
+# Remember that if you make a command you'll need to have
+# "ifFirstMessage: true" else it won't work
+firstMessage: 'Welcome %player%'
+
+shouldSendBroadcast: false
+firstJoinBroadcast: true
+# "firstJoinBroadcast: true" means that it will only send on
+# first join and not on every join
+
+# Remember that if you make a command you'll need to have
+# "ifBroadcast: true" else it won't work
+broadcast: '%player% joined the game'
+
+# If it should show a join message or not
+defaultJoinMessage: false
