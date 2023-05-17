@@ -13,7 +13,7 @@ commands:
 shouldSendMessage: true
 # Remember that if you make a command you'll need to have
 # "ifMessage: true" else it won't work
-message: '&bWelcome Back &a%player% &bto WelcomeWise you are connected with %online-players% other player'
+message: '&#0BFBFBWelcome Back &a%player% &bto WelcomeWise you are connected with %online-players% other player'
 
 shouldSendFirstMessage: true
 # Remember that if you make a command you'll need to have

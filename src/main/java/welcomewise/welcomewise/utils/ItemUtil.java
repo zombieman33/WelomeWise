@@ -1,5 +1,6 @@
 package welcomewise.welcomewise.utils;
 
+import com.tcoded.legacycolorcodeparser.LegacyColorCodeParser;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -167,6 +168,8 @@ public class ItemUtil {
         return item;
     }
     public static String color(String string) {
-        return ChatColor.translateAlternateColorCodes('&', string);
+        string = LegacyColorCodeParser.convertHexToLegacy('&', string);
+        string = ChatColor.translateAlternateColorCodes('&', string);
+        return string;
     }
 }
