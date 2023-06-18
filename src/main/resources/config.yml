@@ -1,6 +1,17 @@
 # Information
 # %player% is player name
 # %online-players% is all the players online
+# %joined-player% is the player that joined
+# for the first time.
+
+welcomeCommand:
+  joinedPlayer:
+    player:
+    noNewPlayerErrorMessage: '&cNo new players are online.'
+    format: '&bWelcome back %joined-player%'
+    command:
+      - 'give %joined-player% diamond 1'
+      - 'give %joined-player% diamond_block 1'
 
 shouldUseCommand: true
 # Remember that if you make a command you'll need to have

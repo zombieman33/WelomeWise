@@ -1,8 +1,10 @@
 name: WelcomeWise
 version: '${project.version}'
 main: welcomewise.welcomewise.WelcomeWise
-api-version: 1.19
+api-version: 1.13
 authors: [ zombieman ]
 commands:
   welcomewise:
     aliases: ws
+  welcome:
+    aliases: w

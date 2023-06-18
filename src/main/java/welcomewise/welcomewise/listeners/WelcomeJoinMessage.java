@@ -2,14 +2,12 @@ package welcomewise.welcomewise.listeners;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.inventory.ItemStack;
 import welcomewise.welcomewise.WelcomeWise;
-import welcomewise.welcomewise.utils.ItemUtil;
+import welcomewise.welcomewise.utils.ColorUtil;
 
 public class WelcomeJoinMessage implements Listener {
 
@@ -62,12 +60,12 @@ public class WelcomeJoinMessage implements Listener {
         }
 
         boolean isFirstJoin = !player.hasPlayedBefore();
-        String colorBroadcast = ItemUtil.color(broadcast);
+        String colorBroadcast = ColorUtil.color(broadcast);
 
         if (isFirstJoin) {
             if (shouldGetAFirstMessage) {
                 // First message
-                player.sendMessage(ItemUtil.color(firstMessage));
+                player.sendMessage(ColorUtil.color(firstMessage));
             }
             if (onlyBroadcastOnFirstJoin && ifBroadcast) {
                 for (Player p : Bukkit.getServer().getOnlinePlayers()) {
@@ -77,7 +75,7 @@ public class WelcomeJoinMessage implements Listener {
         } else {
             if (shouldGetAMessage) {
                 // Message
-                player.sendMessage(ItemUtil.color(message));
+                player.sendMessage(ColorUtil.color(message));
             }
             if (ifBroadcast) {
                 for (Player p : Bukkit.getServer().getOnlinePlayers()) {

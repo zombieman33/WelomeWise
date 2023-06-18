@@ -4,6 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 import welcomewise.welcomewise.commands.WelcomeCommand;
+import welcomewise.welcomewise.commands.WelcomeWiseCommand;
+import welcomewise.welcomewise.listeners.SaveJoinPlayerInConfig;
 import welcomewise.welcomewise.utils.PlayerPlaceHolders;
 import welcomewise.welcomewise.utils.PlayersOnlinePlaceHolders;
 import welcomewise.welcomewise.listeners.WelcomeJoinCommands;
@@ -39,13 +41,18 @@ public final class WelcomeWise extends JavaPlugin {
 //        onlinePlayers.register();
 
         // Commands
-        WelcomeCommand welcomeCommand = new WelcomeCommand(this);
+        WelcomeWiseCommand welcomeWiseCommand = new WelcomeWiseCommand(this);
         PluginCommand mainCmd = getCommand("welcomewise");
-        if (mainCmd != null) mainCmd.setExecutor(welcomeCommand);
+        if (mainCmd != null) mainCmd.setExecutor(welcomeWiseCommand);
+
+        WelcomeCommand welcomeCommand = new WelcomeCommand(this);
+        PluginCommand welcomeCmd = getCommand("welcome");
+        if (welcomeCmd != null) welcomeCmd.setExecutor(welcomeCommand);
 
         // Listeners
         new WelcomeJoinMessage(this);
         new WelcomeJoinCommands(this);
+        new SaveJoinPlayerInConfig(this);
     }
 
     @Override
